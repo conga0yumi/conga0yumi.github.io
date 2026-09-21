@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="涡阳高公官方门户，提供高公集最新新闻资讯、便民服务信息、历史文化介绍及社区互动平台。了解高公镇的行政规划、经济发展与地方特色。">
+    <meta name="keywords" content="涡阳高公, 高公镇, 涡阳高公新闻, 高公集, 涡阳县高公镇人民政府, 亳州高公">
+    <title>涡阳高公-高公集新闻资讯与便民服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #d4a017;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 4px 0;
+            text-align: center;
+        }
+
+        .header-top a {
+            margin: 0 8px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .header-top a:hover {
+            color: var(--white);
+        }
+
+        .header-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .search-bar {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .search-bar input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 42px;
+            z-index: 999;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            color: var(--white);
+            padding: 12px 20px;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3c1a 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        /* Content Section */
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: var(--spacing-md);
+        }
+
+        .news-tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+        }
+
+        .news-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        aside .widget {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-dark);
+        }
+
+        .hot-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-rank {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 8px;
+            font-style: italic;
+        }
+
+        .hot-link {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .hot-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .info-item {
+            background: var(--white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .info-title {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        /* Map Placeholder */
+        .map-section {
+            background-color: var(--white);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #e9e9e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            border: 2px dashed #ccc;
+            margin-top: var(--spacing-md);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 40px 0 20px;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .search-bar {
+                width: 100%;
+            }
+
+            .search-bar input {
+                flex-grow: 1;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部信息条 -->
+    <div class="header-top">
+        <span>涡阳县 · 高公镇人民政府</span> | 
+        <span>服务热线：0558-XXXXXXX</span> | 
+        <span>今日天气：晴 22°C</span>
+    </div>
+
+    <!-- 头部区域 -->
+    <header>
+        <div class="header-main">
+            <a href="#" class="logo">涡阳<span>高公</span></a>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索新闻、政策或办事指南...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">网站首页</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">镇情概况</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">政务公开</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">乡村振兴</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">文化教育</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">民生服务</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">高公集动态</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <h1>魅力高公 · 美丽家园</h1>
+        <p>位于涡阳县东南部的重镇，历史悠久，文化底蕴深厚，是连接亳州与周边地区的重要交通枢纽。</p>
+    </section>
+
+    <!-- 主要内容区 -->
+    <div class="container">
+        
+        <!-- 左侧内容 -->
+        <main>
+            <!-- 政务要闻 -->
+            <section>
+                <div class="section-title">
+                    <h2>政务要闻</h2>
+                    <a href="#">查看更多 &raquo;</a>
+                </div>
+
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/gao1/800/400" alt="高公镇会议" class="news-image">
+                    <div class="news-content">
+                        <span class="news-tag">镇党委</span>
+                        <h3 class="news-title"><a href="#">高公镇召开2024年度乡村振兴工作推进会</a></h3>
+                        <p class="news-meta">
+                            <span>2024-05-20 10:30</span>
+                            <span>来源：党政办</span>
+                        </p>
+                        <p style="margin-top:10px; color:#666;">为进一步巩固拓展脱贫攻坚成果同乡村振兴有效衔接，高公镇于近日召开了全镇乡村振兴工作推进会。会议听取了各村关于产业发展、人居环境整治等情况的汇报，并对下一阶段重点工作进行了部署...</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-content">
+                        <span class="news-tag">经济发展</span>
+                        <h3 class="news-title"><a href="#">高公镇招商引资项目签约仪式圆满举行</a></h3>
+                        <p class="news-meta">
+                            <span>2024-05-18 14:20</span>
+                            <span>来源：招商办</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-content">
+                        <span class="news-tag">民生实事</span>
+                        <h3 class="news-title"><a href="#">高公镇卫生院开展“健康义诊进乡村”活动</a></h3>
+                        <p class="news-meta">
+                            <span>2024-05-15 09:00</span>
+                            <span>来源：高公镇卫生院</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-content">
+                        <span class="news-tag">安全生产</span>
+                        <h3 class="news-title"><a href="#">高公镇扎实开展夏季安全生产大检查</a></h3>
+                        <p class="news-meta">
+                            <span>2024-05-12 16:45</span>
+                            <span>来源：安监站</span>
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 专题推荐 -->
+            <section style="margin-top: 40px;">
+                <div class="section-title">
+                    <h2>专题推荐</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🌾</div>
+                        <div class="info-title">高标准农田建设</div>
+                        <p style="font-size:0.9rem; color:#666;">推进农业现代化，保障粮食安全</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌳</div>
+                        <div class="info-title">人居环境整治</div>
+                        <p style="font-size:0.9rem; color:#666;">建设宜居宜业和美乡村</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📚</div>
+                        <div class="info-title">新时代文明实践</div>
+                        <p style="font-size:0.9rem; color:#666;">弘扬时代新风，传播文明声音</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 地图展示 -->
+            <section class="map-section">
+                <h3>高公镇区位优势</h3>
+                <p style="margin-top: 10px; color: #666;">地处涡阳县东南部，西距亳州市区约30公里，交通便利，区位优势明显。</p>
+                <div class="map-placeholder">
+                    <!-- 模拟地图区域 -->
+                    <div style="text-align: center;">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3" fill="#d4a017"></circle>
+                        </svg>
+                        <p style="margin-top:10px;">高公镇地图区域</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 右侧侧边栏 -->
+        <aside>
+            <!-- 热门排行 -->
+            <div class="widget">
+                <h3 class="widget-title">今日热点</h3>
+                <ul class="hot-list">
+                    <li>
+                        <span class="hot-rank">1</span>
+                        <a href="#" class="hot-link">高公镇关于做好防汛抗旱工作的紧急通知</a>
+                    </li>
+                    <li>
+                        <span class="hot-rank">2</span>
+                        <a href="#" class="hot-link">涡阳县高公镇：党建引领基层治理显成效</a>
+                    </li>
+                    <li>
+                        <span class="hot-rank">3</span>
+                        <a href="#" class="hot-link">高公镇：特色种植产业助农增收</a>
+                    </li>
+                    <li>
+                        <span class="hot-rank">4</span>
+                        <a href="#" class="hot-link">关于高公集赶集时间的温馨提示</a>
+                    </li>
+                    <li>
+                        <span class="hot-rank">5</span>
+                        <a href="#" class="hot-link">高公镇开展全民国家安全教育日活动</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 便民服务 -->
+            <div class="widget">
+                <h3 class="widget-title">便民服务</h3>
+                <ul class="hot-list">
+                    <li><a href="#" style="color:#666;">政务服务大厅电话</a></li>
+                    <li><a href="#" style="color:#666;">天气预报查询</a></li>
+                    <li><a href="#" style="color:#666;">交通路况实时播报</a></li>
+                    <li><a href="#" style="color:#666;">高公镇卫生院挂号入口</a></li>
+                    <li><a href="#" style="color:#666;">农业技术咨询服务</a></li>
+                </ul>
+            </div>
+
+            <!-- 公告栏 -->
+            <div class="widget">
+                <h3 class="widget-title">通知公告</h3>
+                <ul class="hot-list">
+                    <li><a href="#" style="color:#666; font-size:0.9rem;">关于开展高公镇2024年征兵宣传的通知</a></li>
+                    <li><a href="#" style="color:#666; font-size:0.9rem;">高公镇2024年小学招生划片范围公告</a></li>
+                    <li><a href="#" style="color:#666; font-size:0.9rem;">关于规范高公集集市秩序的通告</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>关于高公</h3>
+                <p style="font-size: 0.9rem; line-height: 1.8;">
+                    涡阳县高公镇人民政府官方网站，致力于发布权威信息，提供便民服务，展示高公风采，搭建政民沟通桥梁。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#">涡阳县人民政府</a></li>
+                    <li><a href="#">亳州市人民政府</a></li>
+                    <li><a href="#">安徽政务服务网</a></li>
+                    <li><a href="#">亳州文明网</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>联系方式</h3>
+                <ul>
+                    <li>地址：安徽省亳州市涡阳县高公镇人民政府</li>
+                    <li>电话：0558-7211010</li>
+                    <li>邮箱：gaogaozhen@163.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 涡阳县高公镇人民政府 版权所有 | 皖ICP备XXXXXXXX号</p>
+        </div>
+    </footer>
+
+</body>
+</html>
