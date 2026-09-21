@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="阿姨我要是一个专注于家庭清洁与家政服务预约的一站式平台，提供阿姨上门保洁、家电清洗、房屋深度保洁及月嫂月嫂服务，安全可靠，即时响应。">
+    <meta name="keywords" content="阿姨我要, 上门保洁, 家政服务, 保洁阿姨, 居家清洁, 家电清洗">
+    <title>阿姨我要 - 专业上门保洁与家政服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #e8f5e9;
+            --accent-color: #ff6f00;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f9f9f9;
+            --bg-white: #ffffff;
+            --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #1b5e20;
+            border-color: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-bar {
+            background: var(--bg-white);
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-bar button {
+            padding: 12px 30px;
+            border-radius: 50px;
+        }
+
+        /* Service Grid */
+        .services {
+            padding: 80px 0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s;
+            text-align: center;
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        /* Why Choose Us */
+        .features {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+
+        .feature-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .feature-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .feature-list {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Table */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--bg-body);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            border: 1px solid #eee;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .price-features li {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .price-features li::before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--bg-white);
+            margin-bottom: 15px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        details[open] summary::after {
+            content: "-";
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b0bec5;
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #37474f;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .feature-container {
+                flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">阿姨<span>我要</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#services">服务项目</a></li>
+                    <li><a href="#pricing">收费标准</a></li>
+                    <li><a href="#features">服务保障</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">登录</a>
+                <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">立即预约</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>让家务变得轻松简单</h1>
+                <p>阿姨我要为您提供专业、可靠的上门保洁服务。无论是日常清洁、深度保洁还是家电清洗，我们都能满足您的需求。</p>
+                <form class="search-bar" onsubmit="event.preventDefault(); alert('预约功能即将上线，请稍后再试。');">
+                    <input type="text" placeholder="请输入您所在的城市或小区名" aria-label="输入城市">
+                    <button type="submit" class="btn btn-primary">查找阿姨</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>全方位家庭清洁服务</h2>
+                    <p>专业团队，标准化流程，让您的家焕然一新</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <div class="service-icon">🧹</div>
+                        <h3>日常保洁</h3>
+                        <p>包括拖地、擦窗、擦灰、整理物品等基础清洁服务，适合日常维护。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>深度保洁</h3>
+                        <p>针对厨房油污、卫生间水垢、玻璃缝隙等顽固污渍进行彻底清洁。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🧽</div>
+                        <h3>家电清洗</h3>
+                        <p>专业清洗洗衣机、空调、油烟机、冰箱等家用电器，除菌除垢。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🛋️</div>
+                        <h3>开荒保洁</h3>
+                        <p>新房装修后的首次保洁，彻底清除装修残留物，迎接新生活。</p>
+                        <a href="#" class="btn btn-outline">查看详情</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container feature-container">
+                <div class="feature-image">
+                    <img src="https://picsum.photos/seed/clean/600/400" alt="专业的保洁阿姨正在打扫卫生" loading="lazy">
+                </div>
+                <div class="feature-list">
+                    <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                        <h2>为什么选择阿姨我要？</h2>
+                        <p>安全、专业、省心，我们用心服务每一位客户</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">1</div>
+                        <div class="feature-text">
+                            <h4>严格背景审查</h4>
+                            <p>所有阿姨均经过实名认证、健康体检及严格的背景调查，确保服务安全。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">2</div>
+                        <div class="feature-text">
+                            <h4>专业培训上岗</h4>
+                            <p>统一岗前培训，考核合格后方可上岗，熟练掌握各类清洁技巧和工具使用。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">3</div>
+                        <div class="feature-text">
+                            <h4>服务不满意包赔</h4>
+                            <p>我们提供完善的售后保障，如对服务效果不满意，可申请免费重做。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">4</div>
+                        <div class="feature-text">
+                            <h4>全程可视评价</h4>
+                            <p>服务过程透明化，客户可随时查看阿姨工作进度并进行评价反馈。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2>透明公开的收费标准</h2>
+                    <p>无隐形消费，价格公道，按需选择</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>单次保洁</h3>
+                        <div class="price">¥80<span>/小时</span></div>
+                        <ul class="price-features">
+                            <li>2人上门服务</li>
+                            <li>基础清洁项目</li>
+                            <li>使用标准清洁用品</li>
+                            <li>服务时长2小时起</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline" style="width: 100%; margin-top: 20px;">立即预约</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="badge">热门推荐</div>
+                        <h3>深度保洁套餐</h3>
+                        <div class="price">¥480<span>/套</span></div>
+                        <ul class="price-features">
+                            <li>3人上门服务</li>
+                            <li>全屋深度清洁</li>
+                            <li>包含家电简单清洗</li>
+                            <li>赠送玻璃清洁服务</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 20px;">立即预约</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>家电清洗</h3>
+                        <div class="price">¥99<span>/台</span></div>
+                        <ul class="price-features">
+                            <li>专业师傅上门</li>
+                            <li>深度除菌去垢</li>
+                            <li>清洗后试机演示</li>
+                            <li>有效期30天</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline" style="width: 100%; margin-top: 20px;">立即预约</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container faq-container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于服务流程、价格及注意事项的疑问</p>
+                </div>
+                <details>
+                    <summary>阿姨需要自带清洁工具吗？</summary>
+                    <div class="faq-content">
+                        通常情况下，阿姨会自带常用的清洁工具，如拖把、抹布、清洁剂等。如果您有特殊需求（如需要特定品牌的清洁用品），可以在预约时备注说明。
+                    </div>
+                </details>
+                <details>
+                    <summary>预约后如果临时有事可以取消吗？</summary>
+                    <div class="faq-content">
+                        可以。我们支持提前24小时以上取消预约，不会产生任何费用。如果需要在预约时间前24小时内取消，可能会产生少量的调度费用。
+                    </div>
+                </details>
+                <details>
+                    <summary>服务时长是如何计算的？</summary>
+                    <div class="faq-content">
+                        服务时长以实际上门工作时间为准。建议您根据房屋面积和清洁程度预估时间，一般日常保洁2-3小时即可完成，深度保洁可能需要4-6小时。
+                    </div>
+                </details>
+                <details>
+                    <summary>如何确保阿姨的服务质量？</summary>
+                    <div class="faq-content">
+                        我们建立了严格的监督机制。服务结束后，您可以通过APP或电话对我们的服务进行评价。对于评价较低的订单，我们会进行回访调查，并根据规定进行处理。
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于阿姨我要</h4>
+                    <p style="color: #b0bec5; font-size: 0.9rem; line-height: 1.8;">
+                        阿姨我要致力于打造最安全、最专业的家庭服务平台，连接千万家庭与优质家政阿姨，让居家生活更轻松。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">日常保洁</a></li>
+                        <li><a href="#">深度保洁</a></li>
+                        <li><a href="#">家电清洗</a></li>
+                        <li><a href="#">开荒保洁</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">预约流程</a></li>
+                        <li><a href="#">收费标准</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@aywwo.com</li>
+                        <li>工作时间：9:00 - 21:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 阿姨我要 版权所有. 本页面仅为设计演示。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
