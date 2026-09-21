@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页制作用什么软件 - 全方位网页开发工具与制作指南</title>
+    <meta name="description" content="网页制作用什么软件？本文为您提供从零基础到专业级的网页制作工具推荐，涵盖HTML/CSS编辑器、可视化设计工具、CMS建站系统及AI辅助开发工具，助您轻松选择最适合的网页制作软件。">
+    <meta name="keywords" content="网页制作用什么软件,网页制作工具,前端开发工具,HTML编辑器,CMS建站,可视化网页设计">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #475569;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: #dbeafe;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Tool Categories */
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #eff6ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .tool-list {
+            padding: 1.5rem;
+        }
+
+        .tool-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tool-item:last-child {
+            border-bottom: none;
+        }
+
+        .tool-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .tool-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .tool-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .tool-badge {
+            margin-left: auto;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+            background-color: var(--card-bg);
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.25rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-top: 0.5rem;
+            padding-bottom: 1.25rem;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                WebTool指南
+            </a>
+            <nav class="nav-links">
+                <a href="#visual">可视化工具</a>
+                <a href="#code">代码编辑器</a>
+                <a href="#cms">CMS建站</a>
+                <a href="#compare">对比评测</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#" class="cta-btn">开始制作</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">零基础入门</span>
+                    <span class="tag">专业开发</span>
+                    <span class="tag">快速建站</span>
+                </div>
+                <h1>网页制作用什么软件<br>才能高效搞定网页设计？</h1>
+                <p>无论是想要制作个人博客、企业官网，还是开发复杂的Web应用，选择合适的工具是成功的第一步。我们为您整理了从零基础到专业级的网页制作软件全指南。</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#visual" class="cta-btn" style="padding: 0.75rem 2rem; font-size: 1.1rem;">查看推荐工具</a>
+                    <a href="#compare" style="padding: 0.75rem 2rem; border: 1px solid var(--border-color); border-radius: 6px; font-weight: 600;">软件对比</a>
+                </div>
+
+                <div class="hero-grid">
+                    <div class="hero-card">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                            可视化操作
+                        </h3>
+                        <p>无需编写代码，拖拽组件即可完成布局，适合新手快速搭建页面。</p>
+                        <a href="#visual" style="color: var(--primary-color); font-weight: 600;">了解详情 &rarr;</a>
+                    </div>
+                    <div class="hero-card">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            代码级控制
+                        </h3>
+                        <p>提供强大的代码编辑与预览功能，适合前端开发者进行精细调整。</p>
+                        <a href="#code" style="color: var(--primary-color); font-weight: 600;">了解详情 &rarr;</a>
+                    </div>
+                    <div class="hero-card">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            CMS管理系统
+                        </h3>
+                        <p>无需懂代码，通过后台管理内容，适合运营团队维护企业网站。</p>
+                        <a href="#cms" style="color: var(--primary-color); font-weight: 600;">了解详情 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Tools Section -->
+        <section id="visual" class="section">
+            <div class="container">
+                <h2 class="section-title">可视化网页制作软件</h2>
+                <p class="section-subtitle">这类工具通过所见即所得（WYSIWYG）的方式，让用户像在画板上一样设计网页，无需深厚的编程基础。</p>
+                
+                <div class="hero-grid">
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-title">WordPress + 主题</span>
+                            <div class="category-icon">WP</div>
+                        </div>
+                        <div class="tool-list">
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>Elementor</h4>
+                                    <p>页面构建器插件</p>
+                                </div>
+                                <span class="tool-badge">易用</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>Divi Builder</h4>
+                                    <p>全站可视化设计</p>
+                                </div>
+                                <span class="tool-badge">设计强</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>SiteOrigin</h4>
+                                    <p>轻量级拖拽工具</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-title">纯前端设计工具</span>
+                            <div class="category-icon">UI</div>
+                        </div>
+                        <div class="tool-list">
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>Figma</h4>
+                                    <p>在线协作设计平台</p>
+                                </div>
+                                <span class="tool-badge">云端</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>Adobe XD</h4>
+                                    <p>交互原型与设计</p>
+                                </div>
+                                <span class="tool-badge">专业</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>Webflow</h4>
+                                    <p>无代码建站平台</p>
+                                </div>
+                                <span class="tool-badge">高端</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-header">
+                            <span class="category-title">H5/营销页面工具</span>
+                            <div class="category-icon">H5</div>
+                        </div>
+                        <div class="tool-list">
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>易企秀</h4>
+                                    <p>移动端H5制作</p>
+                                </div>
+                                <span class="tool-badge">模板多</span>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>MAKA</h4>
+                                    <p>动态交互展示</p>
+                                </div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>兔展</h4>
+                                    <p>营销传播工具</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Editors Section -->
+        <section id="code" class="section" style="background-color: #fff;">
+            <div class="container">
+                <h2 class="section-title">代码编辑器与前端开发工具</h2>
+                <p class="section-subtitle">如果您熟悉编程，或者需要完全掌控网页的每一个像素，这些代码编辑器是网页制作用什么软件的最佳答案。</p>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>软件名称</th>
+                                <th>主要功能</th>
+                                <th>适用人群</th>
+                                <th>特点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>VS Code (Visual Studio Code)</strong></td>
+                                <td>HTML/CSS/JS全栈开发</td>
+                                <td>专业开发者</td>
+                                <td>轻量级、插件丰富、调试功能强大</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sublime Text</strong></td>
+                                <td>快速代码编辑</td>
+                                <td>初级/中级开发者</td>
+                                <td>启动速度快、多行选择、原生插件少</td>
+                            </tr>
+                            <tr>
+                                <td><strong>WebStorm</strong></td>
+                                <td>JavaScript开发IDE</td>
+                                <td>前端工程师</td>
+                                <td>智能代码补全、重构、深度调试</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Notepad++</strong></td>
+                                <td>Windows轻量编辑</td>
+                                <td>Windows用户</td>
+                                <td>开源免费、内存占用低</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CMS Section -->
+        <section id="cms" class="section">
+            <div class="container">
+                <h2 class="section-title">CMS内容管理系统</h2>
+                <p class="section-subtitle">网站制作用什么软件可以省去维护代码的麻烦？CMS系统通过后台管理界面，让您能像编辑Word文档一样更新网站内容。</p>
+
+                <div class="hero-grid">
+                    <article class="category-card">
+                        <div class="tool-list">
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>WordPress</h4>
+                                    <p>全球最流行的CMS</p>
+                                </div>
+                                <span class="tool-badge">生态强</span>
+                            </div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">
+                                支持数万个主题和插件，适合博客、企业站、电商等多种类型的网站，学习资源极其丰富。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="tool-list">
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>Typora</h4>
+                                    <p>Markdown编辑器</p>
+                                </div>
+                                <span class="tool-badge">写作</span>
+                            </div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">
+                                实时渲染Markdown，所见即所得，适合技术博客和文档写作，支持导出HTML静态网页。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="tool-list">
+                            <div class="tool-item">
+                                <div class="tool-info">
+                                    <h4>Hexo</h4>
+                                    <p>静态博客生成器</p>
+                                </div>
+                                <span class="tool-badge">极客</span>
+                            </div>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">
+                                基于Node.js，生成纯静态HTML文件，加载速度极快，安全性高，适合程序员搭建个人主页。
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="compare" class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">如何选择适合您的网页制作软件？</h2>
+                <div class="hero-grid">
+                    <div class="hero-card" style="border-left: 4px solid #22c55e;">
+                        <h3>选择可视化工具</h3>
+                        <p>如果您是<strong>设计爱好者</strong>，想快速展示作品，或者<strong>非技术人员</strong>，建议使用Figma、Webflow或WordPress主题。这些工具能降低技术门槛，但可能在SEO和深度定制上受限。</p>
+                    </div>
+                    <div class="hero-card" style="border-left: 4px solid #3b82f6;">
+                        <h3>选择代码编辑器</h3>
+                        <p>如果您是<strong>程序员</strong>，需要开发复杂的交互功能，或者对网站性能有极致要求，VS Code和WebStorm是最佳选择。虽然学习曲线陡峭，但灵活性最高。</p>
+                    </div>
+                    <div class="hero-card" style="border-left: 4px solid #f59e0b;">
+                        <h3>选择CMS系统</h3>
+                        <p>如果您是企业<strong>运营人员</strong>，需要频繁更新文章、产品信息，建议使用WordPress。它提供了完整的内容管理后台，无需触碰代码即可维护网站。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">网页制作用什么软件最好？</div>
+                    <div class="faq-answer">
+                        <p>“最好”取决于您的需求。没有绝对的最好，只有最适合。对于新手，WordPress配合可视化插件最推荐；对于开发者，VS Code是行业标准；对于追求设计感的用户，Figma和Webflow是首选。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">网页制作软件需要收费吗？</div>
+                    <div class="faq-answer">
+                        <p>大多数工具都有免费版本。VS Code、Sublime Text、Notepad++等编辑器完全免费；WordPress本身也是开源免费的，但服务器和域名需要付费；Figma和Webflow提供免费额度，但专业功能需要订阅。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">零基础能学会网页制作吗？</div>
+                    <div class="faq-answer">
+                        <p>完全可以。利用现代的“无代码”工具（如Webflow、Wix）和CMS系统（如WordPress），零基础用户可以在几天内搭建出美观的静态网页。若要深入学习，掌握HTML和CSS是基础。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>WebTool指南</h2>
+                    <p>专注为您提供最全面、最实用的网页制作软件评测与使用教程。帮助您在数字世界中高效构建属于您的网络空间。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>软件分类</h3>
+                    <ul>
+                        <li><a href="#">可视化设计</a></li>
+                        <li><a href="#">代码编辑器</a></li>
+                        <li><a href="#">CMS建站系统</a></li>
+                        <li><a href="#">AI辅助工具</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>相关资源</h3>
+                    <ul>
+                        <li><a href="#">前端学习路线</a></li>
+                        <li><a href="#">免费图库资源</a></li>
+                        <li><a href="#">配色方案推荐</a></li>
+                        <li><a href="#">UI/UX教程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 WebTool指南. All rights reserved. 本站内容仅供学习参考，不作为商业建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                  </html>
