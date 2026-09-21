@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="风月不相关 - 探索情感边界与理性抉择的深度文学社区。提供关于现代情感关系、独立人格与心灵成长的原创文章、书评及互动讨论空间。">
+    <meta name="keywords" content="风月不相关,情感关系,独立人格,文学社区,情感写作,心灵成长">
+    <title>风月不相关 - 情感边界与理性抉择的深度文学社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a5568;
+            --accent-color: #9f7aea;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions button {
+            padding: 0.5rem 1.2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .header-actions button:hover {
+            background-color: #805ad5;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(159, 122, 234, 0.05) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.3rem 0.8rem;
+            background-color: #edf2f7;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Main Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Article List */
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .article-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e2e8f0;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .quote-box {
+            font-style: italic;
+            color: var(--text-main);
+            font-size: 1rem;
+            line-height: 1.8;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .topic-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic-list li:last-child {
+            border-bottom: none;
+        }
+
+        .topic-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .topic-count {
+            background-color: #edf2f7;
+            padding: 0.1rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background-color: var(--card-bg);
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .concept-item {
+            text-align: center;
+        }
+
+        .concept-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #f0fff4;
+            color: #48bb78;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .concept-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .concept-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: var(--card-bg);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #fafafa;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1rem 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: #cbd5e0;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #4a5568;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">风月<span>不相关</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">深度文章</a></li>
+                <li><a href="#">情感关系</a></li>
+                <li><a href="#">独立人格</a></li>
+                <li><a href="#">书评专栏</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button>加入社区</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>在喧嚣中保持清醒</h1>
+            <p>探讨情感边界与理性抉择的深度文学社区。在这里，我们讨论如何在不相关的世界里，建立深刻的连接。</p>
+            <div class="tags">
+                <span class="tag">独立思考</span>
+                <span class="tag">情感边界</span>
+                <span class="tag">现代关系</span>
+                <span class="tag">心灵成长</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="container main-grid">
+        <!-- Articles Column -->
+        <section class="content-column">
+            <div class="section-title">
+                <span>最新深度文章</span>
+            </div>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/silence/800/400" alt="安静的思考" class="article-img">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>情感关系</span>
+                        <span>•</span>
+                        <span>5分钟阅读</span>
+                    </div>
+                    <h2 class="article-title"><a href="#">成年人最好的关系：互不打扰，各自安好</a></h2>
+                    <p class="article-excerpt">在这个充满连接的时代，我们往往忽略了“不相关”的重要性。真正的成熟，不是无时无刻的粘腻，而是懂得在彼此的生命中保持适当的距离与尊重。</p>
+                    <a href="#" class="read-more">阅读全文 →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/sky/800/400" alt="理性的天空" class="article-img">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>独立人格</span>
+                        <span>•</span>
+                        <span>8分钟阅读</span>
+                    </div>
+                    <h2 class="article-title"><a href="#">风月不相关：在世俗洪流中重塑自我</a></h2>
+                    <p class="article-excerpt">风月之事，往往关乎情感与欲望；而“不相关”，则关乎理性与边界。本文探讨如何在复杂的社会关系网中，保持独立的人格内核。</p>
+                    <a href="#" class="read-more">阅读全文 →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/book/800/400" alt="阅读角落" class="article-img">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>书评专栏</span>
+                        <span>•</span>
+                        <span>12分钟阅读</span>
+                    </div>
+                    <h2 class="article-title"><a href="#">《断舍离》：不仅仅是物品，更是关系的清理</a></h2>
+                    <p class="article-excerpt">整理物品的过程，本质上是对生活的梳理。当我们清理掉那些不再“相关”的杂物时，内心也会获得前所未有的轻盈。</p>
+                    <a href="#" class="read-more">阅读全文 →</a>
+                </div>
+            </article>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button style="padding: 0.8rem 2rem; border: 1px solid var(--border-color); background: white; border-radius: 6px; cursor: pointer; color: var(--text-main);">加载更多文章</button>
+            </div>
+        </section>
+
+        <!-- Sidebar Column -->
+        <aside class="sidebar-column">
+            <!-- Philosophy Quote -->
+            <div class="sidebar-card">
+                <p class="quote-box">
+                    “世界本就是风月不相关。我们各自有各自的轨道，偶尔交汇，然后继续前行。”
+                </p>
+                <span class="quote-author">—— 社区格言</span>
+            </div>
+
+            <!-- Hot Topics -->
+            <div class="sidebar-card">
+                <div class="section-title" style="font-size: 1.1rem; border: none; padding: 0;">
+                    <span>热门讨论</span>
+                </div>
+                <ul class="topic-list">
+                    <li>
+                        <a href="#">如何处理渐行渐远的朋友关系？</a>
+                        <span class="topic-count">342</span>
+                    </li>
+                    <li>
+                        <a href="#">恋爱中保持独立是否是一种自私？</a>
+                        <span class="topic-count">289</span>
+                    </li>
+                    <li>
+                        <a href="#">关于“断舍离”的心理学解读</a>
+                        <span class="topic-count">156</span>
+                    </li>
+                    <li>
+                        <a href="#">独居生活的自我边界建立指南</a>
+                        <span class="topic-count">98</span>
+                    </li>
+                    <li>
+                        <a href="#">职场与私生活的“不相关”原则</a>
+                        <span class="topic-count">87</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="sidebar-card">
+                <h3 style="margin-bottom: 1rem; font-size: 1rem;">订阅更新</h3>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem;">获取每周深度思考文章，拒绝信息噪音。</p>
+                <input type="email" placeholder="您的邮箱地址" style="width: 100%; padding: 0.6rem; margin-bottom: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px;">
+                <button style="width: 100%; padding: 0.6rem; background: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">订阅</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Core Values / Philosophy Section -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="section-title" style="justify-content: center; border: none;">
+                <span>我们的核心价值观</span>
+            </div>
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <div class="concept-icon">🧘</div>
+                    <h3>理性边界</h3>
+                    <p>在情感关系中确立清晰的边界，既不侵犯他人，也不委屈自己。</p>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-icon">🌱</div>
+                    <h3>独立成长</h3>
+                    <p>相信个体的力量，在各自的道路上努力生长，不依附，不盲从。</p>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-icon">🤝</div>
+                    <h3>尊重差异</h3>
+                    <p>理解“风月不相关”并非冷漠，而是对彼此生活方式和价值观的尊重。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container faq-section">
+        <div class="section-title">
+            <span>常见问题</span>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">“风月不相关”具体指什么？</div>
+            <div class="faq-answer">
+                “风月”通常指代情感、欲望、浪漫等私密的私人领域；“不相关”则代表着理性、客观、独立与边界。这个词通常用来形容一种成熟的人际关系状态：在保持情感交流的同时，不将自我完全交付给对方，也不将对方视为生活的全部。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">这里适合什么样的人加入？</div>
+            <div class="faq-answer">
+                我们欢迎那些在情感关系中感到困惑、渴望独立思考、关注自我成长以及重视人际关系边界的读者。如果你正在寻找一个可以理性探讨情感话题的社区，这里将是一个安静的避风港。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">文章内容会过于枯燥或说教吗？</div>
+            <div class="faq-answer">
+                绝对不会。我们致力于用文学性的笔触探讨严肃的话题，力求在深度与可读性之间找到平衡。在这里，理性并不意味着冷漠，而是为了更长久、更健康的连接。
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div class="footer-col" style="flex: 2; min-width: 300px;">
+            <a href="#" class="logo" style="font-size: 1.2rem; color: white; display: block; margin-bottom: 1rem;">风月<span style="color: var(--accent-color);">不相关</span></a>
+            <p style="font-size: 0.9rem; color: #718096; max-width: 400px;">
+                一个专注于情感边界与理性思考的在线社区。在这里，我们探讨如何在复杂的世界中保持清醒，建立健康的人际关系。
+            </p>
+        </div>
+        <div class="footer-col" style="flex: 1; min-width: 150px;">
+            <h4>栏目导航</h4>
+            <ul>
+                <li><a href="#">深度文章</a></li>
+                <li><a href="#">情感指南</a></li>
+                <li><a href="#">心理专栏</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+        <div class="footer-col" style="flex: 1; min-width: 150px;">
+            <h4>联系我们</h4>
+            <ul>
+                <li><a href="#">投稿建议</a></li>
+                <li><a href="#">商务合作</a></li>
+                <li><a href="#">用户反馈</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 风月不相关文学社区. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ accordion logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
